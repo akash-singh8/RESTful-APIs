@@ -6,4 +6,7 @@ module.exports = (app) => {
 
   // Listening for post request
   app.post("/ideaApp/v1/ideas", ideaController.createIdea);
+
+  // Listening for put request
+  app.put("/ideaApp/v1/ideas/:id", ideaController.updateIdea);
 };
