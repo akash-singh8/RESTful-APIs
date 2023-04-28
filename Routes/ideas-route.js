@@ -9,4 +9,7 @@ module.exports = (app) => {
 
   // Listening for put request
   app.put("/ideaApp/v1/ideas/:id", ideaController.updateIdea);
+
+  // Listening for delete request
+  app.delete("/ideaApp/v1/ideas/:id", ideaController.deleteIdea);
 };
