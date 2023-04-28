@@ -1,6 +1,7 @@
 const express = require("express");
 
 const app = express();
+app.use(express.json());
 app.use(middleware);
 
 // Middleware function where we can perform checks before actual processing
