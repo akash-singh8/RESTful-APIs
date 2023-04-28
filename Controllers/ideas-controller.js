@@ -18,5 +18,21 @@ module.exports.createIdea = (req, res) => {
 };
 
 // Update idea
+module.exports.updateIdea = (req, res) => {
+  // Read the id passed in the path
+  const ideaId = req.params.id;
+  const toUpdate = req.body;
+
+  // Checking if the idea is present
+  if (ideas.length >= ideaId) {
+    Object.keys(toUpdate).forEach((key) => {
+      ideas[ideaId - 1][key] = toUpdate[key];
+    });
+
+    res.status(200).send(ideas[ideaId - 1]);
+  } else {
+    res.status(400).send({ invalid: "Idea Not Found!" });
+  }
+};
 
 // Delete idea
