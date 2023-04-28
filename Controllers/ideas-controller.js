@@ -20,7 +20,7 @@ module.exports.createIdea = (req, res) => {
 // Update idea
 module.exports.updateIdea = (req, res) => {
   // Read the id passed in the path
-  const ideaId = req.params.id;
+  const ideaId = parseInt(req.params.id);
   const toUpdate = req.body;
 
   // Checking if the idea is present
@@ -36,3 +36,13 @@ module.exports.updateIdea = (req, res) => {
 };
 
 // Delete idea
+module.exports.deleteIdea = (req, res) => {
+  const ideaId = parseInt(req.params.id);
+
+  if (ideas.length >= ideaId) {
+    ideas.splice(ideaId - 1, 1);
+    res.status(200).send({ message: "Successfully Deleted" });
+  } else {
+    res.status(400).send({ invalid: "Idea Not Found!" });
+  }
+};
