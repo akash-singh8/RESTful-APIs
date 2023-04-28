@@ -1,0 +1,11 @@
+{
+  "name": "ideasapi",
+  "version": "1.0.0",
+  "description": "This is a demo project to learn Rest APIs by developing one",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Akash Singh",
+  "license": "ISC"
+}
